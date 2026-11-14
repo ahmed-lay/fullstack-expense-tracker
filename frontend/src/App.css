@@ -1,0 +1,130 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Search bar centrée */
+.search-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.search-bar form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 250px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Carte */
+.map-wrapper {
+  flex: 1;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Sidebar droite */
+.sidebar {
+  width: 300px;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.favorite-btn {
+  background: gold;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.favorites p, .history p {
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.weather-info {
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-info img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-info h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.weather-info .desc {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column-reverse;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .map-wrapper {
+    height: 60vh;
+  }
+}
